@@ -1,0 +1,16 @@
+<div data-bind="with: $root.users">
+    <table class="table">
+        <tr>
+            <th data-bind="i18n: 'ID'"></th>
+            <th data-bind="i18n: 'NAME'"></th>
+            <th data-bind="i18n: 'EMAIL'"></th>
+        </tr>
+        <!-- ko foreach: $data -->
+        <tr class="userRow" data-bind="click: $root.goToPage.bind($data, 'users/' + id)">
+            <td><span data-bind="text: id"></span></td>
+            <td><span data-bind="text: name"></span></td> 
+            <td><span data-bind="text: email"></span></td>
+        </tr>
+        <!-- /ko -->
+    </table>
+</div>

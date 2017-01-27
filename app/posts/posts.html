@@ -1,0 +1,12 @@
+<div id="posts" data-bind="with: $root.posts">
+    <!-- ko foreach: $data -->
+    <div class="panel panel-default">
+        <div data-bind="text: title" class="panel-heading">
+        </div>
+        <div class="panel-body">
+            <p data-bind="text: body"></p>
+            <button data-bind="i18n: 'GO_TO_USER', click: $root.goToPage.bind($data, 'users/' + userId)"></button>
+        </div>
+    </div>
+    <!-- /ko -->
+</div>

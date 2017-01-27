@@ -1,0 +1,22 @@
+<div id="todos" data-bind="with: $root.todos">
+    <!-- ko if: $data.length > 0 -->
+    <button type="button" class="btn btn-success top-right" data-bind="i18n: 'BACK_TO_USER', click: $root.goToPage.bind($data, 'users/' + $data[0].userId)"></button>
+    <!-- /ko -->
+    <h4>
+        TODO: 
+        <!-- ko text: $parent.nCompleted.bind($data, $data)() -->
+        <!-- /ko -->
+        /
+        <!-- ko text: $data.length -->
+        <!-- /ko -->
+    </h4>
+    <!-- ko foreach: $data -->
+    <div class="checkbox disabled">
+        <label>
+            <input type="checkbox" data-bind="checked: completed" disabled>
+            <!-- ko text: title -->
+            <!-- /ko -->
+        </label>
+    </div>
+    <!-- /ko -->
+</div>

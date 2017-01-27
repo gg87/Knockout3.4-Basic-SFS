@@ -1,0 +1,27 @@
+<div id="userDetails" data-bind="with: $root.user">
+    <button type="button" class="btn btn-success top-right" data-bind="i18n: 'SHOW_TODOS', click: $root.goToPage.bind($data, 'users/' + id + '/todos')"></button>
+    <h4 data-bind="i18n: 'USER_DETAIL'"></h4>
+    <form>
+        <div class="form-group">
+            <label for="name" data-bind="i18n: 'NAME'"></label>
+            <input id="name" type="text" class="form-control" name="name" data-bind="value: name">
+        </div>
+        <div class="form-group">
+            <label for="email" data-bind="i18n: 'EMAIL'"></label>
+            <div class="input-group">
+                <span class="input-group-addon">@</span>
+                <input id="email" type="text" class="form-control" name="email" data-bind="value: email">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="username" data-bind="i18n: 'USERNAME'"></label>
+            <input id="username" type="text" class="form-control" name="username" data-bind="value: username">
+        </div>
+        <div class="form-group">
+            <label for="phone" data-bind="i18n: 'PHONE'"></label>
+            <input id="phone" class="form-control" type="text" name="phone" data-bind="value: phone">
+        </div>
+        <button type="button" class="btn btn-primary" data-bind="i18n: 'UPDATE_USER', click: $parent.updateUser.bind($data, $data)"></button>
+        <button type="button" class="btn btn-info" data-bind="i18n: 'SAY_NAME', click: $parent.sayName.bind($data, name, username)"></button>
+    </form>
+</div>
